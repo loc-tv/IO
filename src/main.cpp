@@ -1,4 +1,4 @@
-#include "library.h"
+
 #include "calibrate.h"
 #include "calculate.h"
 #include "communications.h"
@@ -37,8 +37,10 @@ void setup()
 
   Z_Axis.setMaxSpeed(2000.0);      // Set Max Speed of Stepper (Slower to get better accuracy)
   Z_Axis.setAcceleration(1000.0);  // Set Acceleration of Stepper
+  Serial.println("test");
 
   homing();
+
 }
 
 void loop() 

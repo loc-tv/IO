@@ -13,7 +13,7 @@ The `parseData()` function splits the input data, assuming it is sent in a strin
 #ifndef _COMMUNICATIONS_H_
 #define _COMMUNICATIONS_H_
 
-#include <library.h>
+#include <config.h>
 
 void recvWithStartEndMarkers() {
   static boolean recvInProgress = false;

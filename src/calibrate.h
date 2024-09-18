@@ -3,57 +3,61 @@
 
 #include "pinout.h"
 #include "config.h"
-#include "calculate.h"
 //Define a stepper and the pins it will use
 
-void homing() {
+void homing() 
+{
   // Start Homing procedure of Stepper Motor at startup
   Serial.println("<Stepper is Homing . . . . . . . . . . . >");
 
-  // J3 homing
   while (digitalRead(Z_MIN_PIN)) {  // Make the Stepper move CCW until the switch is activated
     Z_Axis.moveTo(Z_initial_homing);  // Set the position to move to
     Z_initial_homing++;  // Decrease by 1 for next move if needed
     Z_Axis.run();  // Start moving the stepper
-    delay(5);
+    // delay(10);
   }
 
   Z_Axis.setCurrentPosition(0);  // Set the current position as zero for now
-  Z_Axis.setMaxSpeed(2000.0);      // Set Max Speed of Stepper (Slower to get better accuracY)
-  Z_Axis.setAcceleration(1000.0);  // Set Acceleration of Stepper
+  Z_Axis.setMaxSpeed(5000.0);      // Set Max Speed of Stepper (Slower to get better accuracY)
+  Z_Axis.setAcceleration(3000.0);  // Set Acceleration of Stepper
   Z_initial_homing = 1;
 
   while (!digitalRead(Z_MIN_PIN)) { // Make the Stepper move CW until the switch is deactivated
     Z_Axis.moveTo(Z_initial_homing);
     Z_Axis.run();
     Z_initial_homing--;
-    delay(5);
+    delay(10);
   }
 
   Z_Axis.setCurrentPosition(0);
   Serial.println("<J3 Homing Completed>");
-  Z_Axis.setMaxSpeed(2000.0);      // Set Max Speed of Stepper (Faster for regular movements)
-  Z_Axis.setAcceleration(1000.0);  // Set Acceleration of Stepper
+  Z_Axis.setMaxSpeed(5000.0);      // Set Max Speed of Stepper (Faster for regular movements)
+  Z_Axis.setAcceleration(3000.0);  // Set Acceleration of Stepper
+
+
+
 
 //J2 homing
   while (digitalRead(Y_MIN_PIN)) {  // Make the Stepper move CCW until the switch is activated
     Y_Axis.moveTo(Y_initial_homing);  // Set the position to move to
     Y_initial_homing--;  // Decrease by 1 for next move if needed
     Y_Axis.run();  // Start moving the stepper
-    delay(5);
+    delay(10);
   }
+    Serial.println("test w3");
 
   Y_Axis.setCurrentPosition(0);  // Set the current position as zero for now
-  Y_Axis.setMaxSpeed(2000.0);      // Set Max Speed of Stepper (Slower to get better accuracY)
-  Y_Axis.setAcceleration(1000.0);  // Set Acceleration of Stepper
+  Y_Axis.setMaxSpeed(5000.0);      // Set Max Speed of Stepper (Slower to get better accuracY)
+  Y_Axis.setAcceleration(3000.0);  // Set Acceleration of Stepper
   Y_initial_homing = 1;
 
   while (!digitalRead(Y_MIN_PIN)) { // Make the Stepper move CW until the switch is deactivated
     Y_Axis.moveTo(Y_initial_homing);
   Y_Axis.run();
     Y_initial_homing++;
-    delay(5);
+    delay(10);
   }
+    Serial.println("test w4");
 
   Y_Axis.setCurrentPosition(0);
   Serial.println("<J2 Homing Completed>");
@@ -65,8 +69,9 @@ void homing() {
     X_Axis.moveTo(X_initial_homing);  // Set the position to move to
     X_initial_homing++;  // increase by 1 for next move if needed
     X_Axis.run();  // Start moving the stepper
-     delay(5);
+     delay(10);
   }
+    Serial.println("test w5");
 
   X_Axis.setCurrentPosition(0);  // Set the current position as zero for now
   X_Axis.setMaxSpeed(2000.0);      // Set Max Speed of Stepper (Slower to get better accuracY)
@@ -79,6 +84,7 @@ void homing() {
     X_initial_homing--;
      delay(5);
   }
+    Serial.println("test w6");
 
   X_Axis.setCurrentPosition(0);
   Serial.println("<J1 Homing Completed>");

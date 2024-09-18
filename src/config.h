@@ -60,7 +60,7 @@ bool executedOk = false;  // boolean variable to check if move is completed
 
 AccelStepper X_Axis(1, X_STEP_PIN, X_DIR_PIN);
 AccelStepper Y_Axis(1, Y_STEP_PIN, Y_DIR_PIN);
-AccelStepper Z_Axis(1, Z_DIR_PIN, Z_DIR_PIN);
+AccelStepper Z_Axis(1, Z_STEP_PIN, Z_DIR_PIN);
 
 MultiStepper steppers;
 
@@ -72,10 +72,5 @@ long Y_initial_homing = -1; // Used to Home Stepper at startup
 
 int Z_move_finished = 1; // Used to check if move is completed - DOESN'T SEEM TO BE USED
 long Z_initial_homing = -1; // Used to Home Stepper at startup
-
-
-// float X_newPosition = 0; // stepper count for X position
-// float Y_newPosition = 0;
-// float Z_newPosition = 0; // stepper count for Z position
 
 #endif
