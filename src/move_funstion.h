@@ -1,7 +1,6 @@
 #ifndef _MOVE_FUNCTION_H_
 #define _MOVE_FUNCTION_H_
 
-#include "library.h"
 #include "pinout.h"
 #include "config.h"
 #include "calibrate.h"

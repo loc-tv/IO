@@ -1,4 +1,4 @@
-
+#include "config.h"
 #include "calibrate.h"
 #include "calculate.h"
 #include "communications.h"

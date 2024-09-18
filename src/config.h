@@ -5,10 +5,12 @@
 #include <Arduino.h>
 #include <AccelStepper.h>
 #include <MultiStepper.h>
+#include "pinout.h"
 
 const unsigned numChars = 32;
 char receivedChars[numChars];
 char tempChars[numChars];        // temporary array for use when parsing
+typedef unsigned char byte;
 
 // variables to hold the parsed data
 float X_Coordinate = 15;

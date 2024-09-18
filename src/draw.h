@@ -1,7 +1,6 @@
 #ifndef _DRAW_H_
 #define _DRAW_H_
 
-#include <Arduino.h>
 #include "calculate.h"
 #include "move_funstion.h"
 
@@ -9,7 +8,7 @@ void arc(float cX, float cY, float endX, float endY, float dir)
 { // (cX, cY, endX, endY, DIR)
   // get radius
 
-  Serial.println("  executing arc ");
+  // Serial.println("  executing arc ");
 
   float dx = x1 - cX; // changed XCoordinate to x1
 
